@@ -10,6 +10,13 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        cian1: "#3988CD",
+        green1: "#6bd968",
+        yellow1: "#fecc1b",
+      },
+      fontFamily: {
+        satoshi: ["Satoshi", "sans-serif"],
+        inter: ["Inter", "sans-serif"],
       },
     },
   },
