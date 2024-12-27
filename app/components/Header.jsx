@@ -7,7 +7,7 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleMenuToggle = () => {
-    setIsMenuOpen(true);
+    setIsMenuOpen(!isMenuOpen);
   };
 
   return (
@@ -24,9 +24,31 @@ export default function Header() {
         <button className="opacity-80 hover:opacity-100">ShowRoom</button>
         <button className="opacity-80 hover:opacity-100">Whatsapp</button>
       </div>
-      <button className="md:hidden" onClick={handleMenuToggle}>
-        <RxHamburgerMenu />
+      <button
+        className={`${
+          isMenuOpen ? "bg-slate-400 opacity-40" : "opacity-100"
+        } md:hidden p-2 rounded-full`}
+        onClick={handleMenuToggle}
+      >
+        <RxHamburgerMenu color="white" />
       </button>
+
+      {isMenuOpen && (
+        <div className="w-40 border-[2px] border-gray-500 rounded-md bg-black absolute top-[70px] right-5 z-10 ">
+          <div className="flex my-3 rounded-md text-lg font-bold items-start px-4 flex-col gap-3">
+            <button className="opacity-80 hover:opacity-100">Cursos</button>
+            <button className="opacity-80 hover:opacity-100">Sucursales</button>
+            <button className="opacity-80 hover:opacity-100">ShowRoom</button>
+            <button className="opacity-80 hover:opacity-100">Whatsapp</button>
+          </div>
+        </div>
+      )}
+      {isMenuOpen && (
+        <div
+          className="w-screen h-full  opacity-10 absolute top-5 right-5"
+          onClick={handleMenuToggle}
+        ></div>
+      )}
     </div>
   );
 }

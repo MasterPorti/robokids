@@ -11,8 +11,9 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
         cian1: "#3988CD",
-        green1: "#6bd968",
+        green1: "#26BB9E",
         yellow1: "#fecc1b",
+        red1: "#DB5679",
       },
       fontFamily: {
         satoshi: ["Satoshi", "sans-serif"],
