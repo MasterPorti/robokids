@@ -53,7 +53,6 @@ export default function Header() {
                 Sucursales
               </button>
               <button className="opacity-80 hover:opacity-100">ShowRoom</button>
-              <button className="opacity-80 hover:opacity-100">Whatsapp</button>
             </div>
           </div>
         )}

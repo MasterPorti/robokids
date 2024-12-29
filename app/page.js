@@ -18,9 +18,13 @@ export default function Home() {
             </p>
           </div>
           <div className=" flex md:hidden justify-center items-center mx-5 gap-4 mt-5">
-            <VideoButton title="#Robotica" color="#26BB9E" />
-            <VideoButton title="#Corte Laser" color="#DB5679" />
-            <VideoButton title="#3DImpresion" color="#3988CD" />
+            <VideoButton title="#Robotica" color="#26BB9E" video="robotica" />
+            <VideoButton title="#Corte Laser" color="#DB5679" video="corte" />
+            <VideoButton
+              title="#3DImpresion"
+              color="#3988CD"
+              video="impresion"
+            />
           </div>
           <div className="flex flex-wrap gap-8 my-5 items-center justify-center w-full px-5">
             <SchoolButton
@@ -50,9 +54,9 @@ export default function Home() {
         </div>
       </div>
       <div className="hidden gap-4 lg:flex justify-center items-center mt-3 mb-7">
-        <VideoButton title="#Robotica" color="#26BB9E" />
-        <VideoButton title="#Corte Laser" color="#DB5679" />
-        <VideoButton title="#3DImpresion" color="#3988CD" />
+        <VideoButton title="#Robotica" color="#26BB9E" video="robotica" />
+        <VideoButton title="#Corte Laser" color="#DB5679" video="corte" />
+        <VideoButton title="#3DImpresion" color="#3988CD" video="impresion" />
       </div>
     </>
   );

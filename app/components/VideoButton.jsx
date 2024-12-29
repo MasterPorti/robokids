@@ -1,13 +1,17 @@
-export default function VideoButton({
-  title = "#Robótica",
-  color = "#DB5679",
-}) {
+export default function VideoButton({ title, color, video }) {
   const colorClass =
     {
       "#26BB9E": "to-green1",
       "#DB5679": "to-cian1",
       "#3988CD": "to-red1",
     }[color] || "to-gray-500";
+
+  const videoClass =
+    {
+      robotica: "/mini-1.mp4",
+      corte: "/corte-mini.mp4",
+      impresion: "/3dprinting.mp4",
+    }[video] || "/mini-1.mp4";
 
   return (
     <div className="relative w-full max-w-52 aspect-[9/16] rounded-lg overflow-hidden">
@@ -18,13 +22,10 @@ export default function VideoButton({
           <span className="text-xl">{title}</span>
         </p>
       </div>
-      <video
-        className="w-full h-full object-cover"
-        src="/mini-1.mp4"
-        autoPlay
-        muted
-        loop
-      />
+      <video className="w-full h-full object-cover" autoPlay muted loop>
+        <source src={videoClass} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
     </div>
   );
 }
