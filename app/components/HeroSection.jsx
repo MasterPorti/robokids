@@ -1,3 +1,4 @@
+import Image from "next/image";
 import VideoButton from "./VideoButton";
 
 export default function HeroSection() {
@@ -15,6 +16,16 @@ export default function HeroSection() {
           <VideoButton />
         </div>
       </div>
+      <button className="bg-yellow1 flex gap-1 justify-center items-center  font-black px-2 py-1 text-black rounded-md mt-3">
+        <Image
+          className="w-20"
+          src="/robokids-black.svg"
+          width={150}
+          height={100}
+          alt="Robokids"
+        />
+        <span>en tu escuela </span>
+      </button>
       <div className="hidden  md:flex justify-center  mt-5 font-inter font-semibold text-gray-400 xs:text-lg lg:text-xl xl:max-w-xl">
         <p className="text-center">
           Si te emociona imaginar tus sueños, ¡imagina lograrlos!

@@ -4,14 +4,14 @@ export default function VideoButton({ title, color, video }) {
       "#26BB9E": "to-green1",
       "#DB5679": "to-cian1",
       "#3988CD": "to-red1",
-    }[color] || "to-gray-500";
+    }[color] || "to-red1";
 
   const videoClass =
     {
-      robotica: "/mini-1.mp4",
+      robotica: "/robotica-mini.mp4",
       corte: "/corte-mini.mp4",
       impresion: "/3dprinting.mp4",
-    }[video] || "/mini-1.mp4";
+    }[video] || "/robotica-mini.mp4";
 
   return (
     <div className="relative w-full max-w-52 aspect-[9/16] rounded-lg overflow-hidden">
