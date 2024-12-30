@@ -8,12 +8,12 @@ export default function Robotica() {
       <Header />
       <div className="flex justify-between">
         <div></div>
-        <div className="bg-[#E14141] text-[#121212] font-black rounded-md mb-[-10px] p-1">
+        <div className="bg-[#E14141] relative z-10 text-[#121212] font-black rounded-md mb-[-10px] p-1">
           GRATIS
         </div>
       </div>
       <div className="mx-5 h-28">
-        <div className="w-full flex bg-gradient-to-t from-[#bd193d] to-[#5d035e] h-36 rounded-lg px-3 gap-3">
+        <div className="w-full relative flex bg-gradient-to-t from-[#bd193d] to-[#5d035e] h-36 rounded-lg px-3 gap-3">
           <div className=" flex-col flex items-center justify-center">
             <span>Clase muestra</span>
             <Image
@@ -26,9 +26,11 @@ export default function Robotica() {
               + DESCUENTO PERMANENTE
             </span>
           </div>
-          <div className="flex flex-col mt-5 items-center gap-3">
-            <button className="flex items-center rounded-l-md px-2 gap-2 bg-[#FD9507] ">
-              <span className="text-wrap font-bold">Escoje el dia</span>
+          <div className="flex flex-col mt-5 items-center gap-3 w-1/2">
+            <button className="flex items-center rounded-md w-full px-2 justify-between bg-[#FD9507] ">
+              <span className="text-wrap font-bold text-center w-full ">
+                Escoje el dia
+              </span>
               <svg
                 width="20"
                 height="11"
@@ -42,8 +44,10 @@ export default function Robotica() {
                 />
               </svg>
             </button>
-            <button className="flex w-full items-center rounded-l-md px-2 gap-2 bg-[#FD9507] ">
-              <span className="text-wrap font-bold">Tu edad es</span>
+            <button className="flex items-center rounded-md w-full px-2 justify-between bg-[#FD9507] ">
+              <span className="text-wrap font-bold text-center w-full ">
+                Tu edad es
+              </span>
               <svg
                 width="20"
                 height="11"
@@ -58,6 +62,13 @@ export default function Robotica() {
               </svg>
             </button>
           </div>
+          <Image
+            className="absolute bottom-0 right-0"
+            src="/robot.png"
+            width={100}
+            height={100}
+            alt="Picture of the author"
+          />
         </div>
       </div>
     </>
