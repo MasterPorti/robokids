@@ -12,7 +12,7 @@ export default function Robotica() {
           GRATIS
         </div>
       </div>
-      <div className="mx-5 h-28">
+      <div className="mx-5">
         <div className="w-full relative flex bg-gradient-to-t from-[#bd193d] to-[#5d035e] h-36 rounded-lg px-3 gap-3">
           <div className=" flex-col flex items-center justify-center">
             <span>Clase muestra</span>
@@ -69,6 +69,26 @@ export default function Robotica() {
             height={100}
             alt="Picture of the author"
           />
+        </div>
+        <div className="flex gap-3 mt-2 w-full">
+          <button className="bg-[#0dc043] py-2 gap-2 items-center justify-center px-2 flex rounded-md w-1/2">
+            <Image src="whatsapp.svg" width={25} height={20} />
+            <span className=" flex flex-col text-black">
+              <span className="leading-3 font-bold text-nowrap text-lg line">
+                Agendar
+              </span>
+              <span>clase muestra</span>
+            </span>
+          </button>
+          <button className="bg-blue-400 py-2 gap-2 items-center justify-center px-2 flex rounded-md w-1/2">
+            <Image src="location.svg" width={25} height={20} />
+            <span className=" flex flex-col text-black">
+              <div className="leading-3 font-bold text-nowrap text-lg line">
+                Sucursal
+              </div>
+              <span>Plaza Coacalco </span>
+            </span>
+          </button>
         </div>
       </div>
     </>
