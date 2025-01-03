@@ -46,6 +46,13 @@ export default function Robotica() {
             />
           )}
         </div>
+        <p className="text-white/55 text-xs font-thin text-center mt-1">
+          La clase muestra es totalmente{" "}
+          <span className="text-white">gratis</span>, recibirás un{" "}
+          <span className="text-white">descuento permanente</span> en la
+          mensualidad y armarás tu primer circuito.
+        </p>
+
         <Button label="Agenda clase muestra gratis" className="bg-white" />
         <div className="w-6 h-6 sm:bg-black bg-gray-400 rounded-full"></div>
       </div>
