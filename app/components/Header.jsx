@@ -10,6 +10,13 @@ export default function Header() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const handleWhatsappClick = () => {
+    window.open(
+      "https://wa.me/525560305975?text=Hola%2C%20qu%C3%ADsiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20cursos%20🤯",
+      "_blank"
+    );
+  };
+
   return (
     <div className="text-3xl flex justify-between font-Inter my-6 mx-5">
       <Image
@@ -19,7 +26,10 @@ export default function Header() {
         alt="Picture of the author"
       />
       <div className="flex items-center gap-4">
-        <button className="flex items-center gap-2 rounded-md bg-[#0dc043] px-2 py-1">
+        <button
+          className="flex items-center gap-2 rounded-md bg-[#0dc043] px-2 py-1"
+          onClick={handleWhatsappClick}
+        >
           <Image
             src="/whatsapp.svg"
             width={20}

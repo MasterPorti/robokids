@@ -54,7 +54,14 @@ export default function Robotica() {
         </p>
 
         <Button label="Agenda clase muestra gratis" className="bg-white" />
-        <div className="w-6 h-6 sm:bg-black bg-gray-400 rounded-full"></div>
+        <iframe
+          className="w-full rounded-lg mt-3 aspect-video mx-auto"
+          src="https://www.youtube-nocookie.com/embed/ePid0kKtNFo?autoplay=1&mute=1&controls=0&loop=1&playlist=ePid0kKtNFo"
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+        ></iframe>
       </div>
     </>
   );
