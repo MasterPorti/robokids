@@ -1,95 +1,53 @@
+"use client";
 import Image from "next/image";
-
+import { useState } from "react";
 import Header from "../components/Header";
-import HeroSection from "../components/HeroSection";
+import Banner from "../components/Banner";
+import PromoCard from "../components/PromoCard";
+import AgeSelector from "../components/AgeSelector";
+import Button from "../components/Button";
+import ScheduleSelector from "../components/ScheduleSelector";
 export default function Robotica() {
+  const edades = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+  const [menuHorario, setMenuHorario] = useState(false);
+  const [menuEdad, setMenuEdad] = useState(false);
+  const [edad, setEdad] = useState(0);
+  const [horario, setHorario] = useState("");
+
   return (
     <>
       <Header />
-      <div className="flex justify-between">
-        <div></div>
-        <div className="bg-[#E14141] relative z-10 text-[#121212] font-black rounded-md mb-[-10px] p-1">
-          GRATIS
-        </div>
-      </div>
       <div className="mx-5">
-        <div className="w-full relative flex bg-gradient-to-t from-[#bd193d] to-[#5d035e] h-36 rounded-lg px-3 gap-3">
-          <div className=" flex-col flex items-center justify-center">
-            <span>Clase muestra</span>
-            <Image
-              src="/robotica.svg"
-              width={150}
-              height={100}
-              alt="Picture of the author"
-            />
-            <span className="font-bold text-xs text-nowrap">
-              + DESCUENTO PERMANENTE
-            </span>
-          </div>
-          <div className="flex flex-col mt-5 items-center gap-3 w-1/2">
-            <button className="flex items-center rounded-md w-full px-2 justify-between bg-[#FD9507] ">
-              <span className="text-wrap font-bold text-center w-full ">
-                Escoje el dia
-              </span>
-              <svg
-                width="20"
-                height="11"
-                viewBox="0 0 20 11"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M0.8875 2.6625C0.397348 2.17235 0.397346 1.37765 0.887498 0.8875C1.37765 0.397347 2.17235 0.397347 2.6625 0.8875L8.58578 6.81079C9.36683 7.59183 10.6332 7.59184 11.4142 6.81079L17.3375 0.887501C17.8277 0.397348 18.6223 0.397347 19.1125 0.8875C19.6027 1.37765 19.6027 2.17235 19.1125 2.6625L11.4142 10.3608C10.6332 11.1418 9.36683 11.1418 8.58579 10.3608L0.8875 2.6625Z"
-                  fill="white"
-                />
-              </svg>
-            </button>
-            <button className="flex items-center rounded-md w-full px-2 justify-between bg-[#FD9507] ">
-              <span className="text-wrap font-bold text-center w-full ">
-                Tu edad es
-              </span>
-              <svg
-                width="20"
-                height="11"
-                viewBox="0 0 20 11"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M0.8875 2.6625C0.397348 2.17235 0.397346 1.37765 0.887498 0.8875C1.37765 0.397347 2.17235 0.397347 2.6625 0.8875L8.58578 6.81079C9.36683 7.59183 10.6332 7.59184 11.4142 6.81079L17.3375 0.887501C17.8277 0.397348 18.6223 0.397347 19.1125 0.8875C19.6027 1.37765 19.6027 2.17235 19.1125 2.6625L11.4142 10.3608C10.6332 11.1418 9.36683 11.1418 8.58579 10.3608L0.8875 2.6625Z"
-                  fill="white"
-                />
-              </svg>
-            </button>
-          </div>
-          <Image
-            className="absolute bottom-0 right-0"
-            src="/robot.png"
-            width={100}
-            height={100}
-            alt="Picture of the author"
+        <Banner />
+        <div className="w-full p-3 bg-[#353535] rounded-lg">
+          <PromoCard />
+          <Button
+            onClick={() => setMenuEdad(true)}
+            label={edad === 0 ? "¿Cuál es tu edad?" : `Perfecto ${edad} años!!`}
           />
-        </div>
-        <div className="flex gap-3 mt-2 w-full">
-          <button className="bg-[#0dc043] py-2 gap-2 items-center justify-center px-2 flex rounded-md w-1/2">
-            <Image src="whatsapp.svg" width={25} height={20} />
-            <span className=" flex flex-col text-black">
-              <span className="leading-3 font-bold text-nowrap text-lg line">
-                Agendar
-              </span>
-              <span>clase muestra</span>
-            </span>
+          {menuEdad && (
+            <AgeSelector
+              edades={edades}
+              setEdad={setEdad}
+              closeMenu={() => setMenuEdad(false)}
+            />
+          )}
+          <button
+            onClick={() => setMenuHorario(true)}
+            className="bg-cyan-200 w-full mt-2 p-2 rounded-md font-bold text-black border-r-4 border-r-cyan-400 border-b-4 border-b-cyan-400"
+          >
+            {horario === "" ? "¿Cuándo te gustaría tomar la clase?" : horario}
           </button>
-          <button className="bg-blue-400 py-2 gap-2 items-center justify-center px-2 flex rounded-md w-1/2">
-            <Image src="location.svg" width={25} height={20} />
-            <span className=" flex flex-col text-black">
-              <div className="leading-3 font-bold text-nowrap text-lg line">
-                Sucursal
-              </div>
-              <span>Plaza Coacalco </span>
-            </span>
-          </button>
+          {menuHorario && (
+            <ScheduleSelector
+              setHorario={setHorario}
+              horario={horario}
+              closeMenu={() => setMenuHorario(false)}
+            />
+          )}
         </div>
+        <Button label="Agenda clase muestra gratis" className="bg-white" />
+        <div className="w-6 h-6 sm:bg-black bg-gray-400 rounded-full"></div>
       </div>
     </>
   );
