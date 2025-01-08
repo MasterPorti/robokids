@@ -8,7 +8,7 @@ export default function Banner() {
         className="object-center object-cover"
         src="/robotica.svg"
         width={300}
-        height={300}
+        height={50}
         alt="robotica"
       />
       <span className="font-bold text-[1.4rem] underline-offset-2 tracking-wider">
