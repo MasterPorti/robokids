@@ -13,11 +13,21 @@ export default function Robotica() {
   const [menuEdad, setMenuEdad] = useState(false);
   const [edad, setEdad] = useState(0);
   const [horario, setHorario] = useState("");
+  const [shake, setShake] = useState(false);
+
+  const handleCheck = () => {
+    if (edad === 0 || horario === "") {
+      setShake(true);
+      setTimeout(() => setShake(false), 500);
+    } else {
+      console.log("Agendando clase");
+    }
+  };
 
   return (
     <>
       <Header />
-      <div className="mx-5">
+      <div className="mx-5 max-w-3xl lg:mx-auto">
         <Banner />
         <div className="w-full p-3 bg-[#353535] rounded-lg">
           <PromoCard />
@@ -53,7 +63,11 @@ export default function Robotica() {
           mensualidad y armarás tu primer circuito.
         </p>
 
-        <Button label="Agenda clase muestra gratis" className="bg-white" />
+        <Button
+          onClick={handleCheck}
+          label="Agenda clase muestra gratis"
+          className="bg-white"
+        />
         <iframe
           className="w-full rounded-lg mt-3 aspect-video mx-auto"
           src="https://www.youtube-nocookie.com/embed/ePid0kKtNFo?autoplay=1&mute=1&controls=0&loop=1&playlist=ePid0kKtNFo"
