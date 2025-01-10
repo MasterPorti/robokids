@@ -33,7 +33,7 @@ export default function Home() {
               title="Corte Láser"
               description="Corta y graba con precisión milimétrica."
               gradient="from-[#DB567980] to-[#F12A5F80]"
-              link={"/corte-laser"}
+              link={"/corte"}
             />
 
             <SchoolButton
@@ -41,7 +41,7 @@ export default function Home() {
               title="Impresión 3D"
               description="Convierte tus diseños en objetos capa por capa"
               gradient="from-[#3988CD80] to-[#295A8580]"
-              link={"/corte-laser"}
+              link={"/3d"}
             />
           </div>
         </div>

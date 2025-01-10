@@ -1,12 +1,12 @@
 import Image from "next/image";
 
-export default function Banner() {
+export default function Banner({ icon }) {
   return (
     <div className="flex flex-col items-center">
       <h1 className="text-2xl font-thin">Clase muestra</h1>
       <Image
         className="object-center object-cover"
-        src="/robotica.svg"
+        src={icon}
         width={300}
         height={50}
         alt="robotica"

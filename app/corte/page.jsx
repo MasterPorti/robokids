@@ -43,7 +43,7 @@ export default function Robotica() {
       const horaInicio = horario.slice(-5).substring(0, 2);
 
       // Generar el código de reserva
-      const codigo = `${edad}${mes[0]}${dia}${mes[1]}${horaInicio}+"R`;
+      const codigo = `${edad}${mes[0]}${dia}${mes[1]}${horaInicio}+"C`;
       console.log(codigo);
 
       window.open(
@@ -59,12 +59,12 @@ export default function Robotica() {
     <>
       <Header />
       <div className="mx-5 max-w-3xl lg:mx-auto">
-        <Banner icon="robotica.svg" />
+        <Banner icon="corte.svg" />
         <div className="w-full p-3 bg-[#353535] rounded-lg">
           <PromoCard
             title="Crear tu primer corte laser!!"
             description="Echa un vistazo a una clase gratis"
-            imagen="/roboticaFire.png"
+            imagen="/corteFire.png"
           />
           <button
             onClick={() => setMenuEdad(true)}
