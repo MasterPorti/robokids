@@ -43,7 +43,7 @@ export default function Robotica() {
       const horaInicio = horario.slice(-5).substring(0, 2);
 
       // Generar el código de reserva
-      const codigo = `${edad}${mes[0]}${mes[1]}${dia}${horaInicio}`;
+      const codigo = `${edad}${mes[0]}${dia}${mes[1]}${horaInicio}`;
       console.log(codigo);
 
       window.open(
