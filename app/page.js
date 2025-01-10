@@ -2,8 +2,6 @@ import Image from "next/image";
 import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
 import SchoolButton from "./components/SchoolButton";
-import Link from "next/link";
-import VideoButton from "./components/VideoButton";
 import VideoSection from "./components/VideoSection";
 
 export default function Home() {

@@ -14,13 +14,44 @@ export default function Robotica() {
   const [edad, setEdad] = useState(0);
   const [horario, setHorario] = useState("");
   const [shake, setShake] = useState(false);
-
+  const [shakeEdad, setShakeEdad] = useState(false);
+  const [shakeSchedule, setShakeSchedule] = useState(false);
   const handleCheck = () => {
+    // Si el horario está vacío, se activa la animación de error
+    if (horario === "") {
+      setShakeSchedule(true);
+      setTimeout(() => setShakeSchedule(false), 500);
+    }
+
+    // Si la edad es 0, se activa la animación de error
+    if (edad === 0) {
+      setShakeEdad(true);
+      setTimeout(() => setShakeEdad(false), 500);
+    }
+
+    // Si la edad o el horario están vacíos, se activa la animación de error general
     if (edad === 0 || horario === "") {
       setShake(true);
       setTimeout(() => setShake(false), 500);
     } else {
-      console.log("Agendando clase");
+      // Separar los componentes del horario (ej. "Sábado, 11 de enero 4-6pm")
+      const horarioParts = horario.split(" ");
+      const dia = parseInt(horarioParts[1], 10); // Día del mes (11)
+      const mes = horarioParts[2].substring(0, 3).toUpperCase(); // Mes abreviado (Enero -> ENE)
+
+      // Extraer la hora de inicio
+      const horaInicio = horario.slice(-5).substring(0, 2);
+
+      // Generar el código de reserva
+      const codigo = `${edad}${mes[0]}${mes[1]}${dia}${horaInicio}`;
+      console.log(codigo);
+
+      window.open(
+        `https://wa.me/525561758678?text=Hola%2C%20quiero%20mi%20lugar%20en%20la%20clase%20gratis%20y%20aprovechar%20el%20descuento%20exclusivo.%20Mi%20c%C3%B3digo%20es%20${codigo}.🙌`,
+        "_blank"
+      );
+
+      // Enviar el mensaje de WhatsApp con la información
     }
   };
 
@@ -31,10 +62,14 @@ export default function Robotica() {
         <Banner />
         <div className="w-full p-3 bg-[#353535] rounded-lg">
           <PromoCard />
-          <Button
+          <button
             onClick={() => setMenuEdad(true)}
-            label={edad === 0 ? "¿Cuál es tu edad?" : `Perfecto ${edad} años!!`}
-          />
+            className={`bg-cyan-200 w-full mt-2 p-2 rounded-md font-bold text-black border-r-4 border-r-cyan-400 border-b-4 border-b-cyan-400 ${
+              shakeEdad ? "animate-shake" : ""
+            }`}
+          >
+            {edad === 0 ? "¿Cuál es tu edad?" : `Perfecto ${edad} años!!`}
+          </button>
           {menuEdad && (
             <AgeSelector
               edades={edades}
@@ -44,7 +79,9 @@ export default function Robotica() {
           )}
           <button
             onClick={() => setMenuHorario(true)}
-            className="bg-cyan-200 w-full mt-2 p-2 rounded-md font-bold text-black border-r-4 border-r-cyan-400 border-b-4 border-b-cyan-400"
+            className={`bg-cyan-200 w-full mt-2 p-2 rounded-md font-bold text-black border-r-4 border-r-cyan-400 border-b-4 border-b-cyan-400 ${
+              shakeSchedule ? "animate-shake" : ""
+            }`}
           >
             {horario === "" ? "¿Cuándo te gustaría tomar la clase?" : horario}
           </button>
@@ -66,7 +103,9 @@ export default function Robotica() {
         <Button
           onClick={handleCheck}
           label="Agenda clase muestra gratis"
-          className="bg-white"
+          className={`mt-3 ${shake ? "animate-shake" : ""}   ${
+            edad === 0 || horario === "" ? "bg-gray-300" : "bg-[#0dc043]"
+          }`}
         />
         <iframe
           className="w-full rounded-lg mt-3 aspect-video mx-auto"
