@@ -16,7 +16,7 @@ export default function AgeSelector({ edades, setEdad, closeMenu }) {
           <path d="M32.5 41.5V0L0 14L15.5 25L0 41.5H32.5Z" fill="#441369" />
         </svg>
       </div>
-      <div className="flex flex-wrap justify-center">
+      <div className="flex flex-wrap justify-center max-w-96">
         {edades.map((e) => (
           <button
             key={e}
@@ -29,6 +29,14 @@ export default function AgeSelector({ edades, setEdad, closeMenu }) {
             {e}
           </button>
         ))}
+        <button
+          onClick={() => {
+            closeMenu();
+          }}
+          className="bg-cyan-200 w-20 h-10 m-1 p-2 rounded-md font-bold text-black border-r-4 border-r-cyan-400 border-b-4 border-b-cyan-400"
+        >
+          Atras
+        </button>
       </div>
     </div>
   );

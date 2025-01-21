@@ -57,6 +57,14 @@ const ScheduleSelector = ({ closeMenu, setHorario, horario }) => {
             {date}
           </button>
         ))}
+        <button
+          onClick={() => {
+            closeMenu();
+          }}
+          className="bg-cyan-200 w-64 h-10 m-1 p-2 rounded-md font-bold text-black border-r-4 border-r-cyan-400 border-b-4 border-b-cyan-400"
+        >
+          Atras
+        </button>
       </div>
     </div>
   );

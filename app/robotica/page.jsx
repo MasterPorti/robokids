@@ -7,6 +7,7 @@ import PromoCard from "../components/PromoCard";
 import AgeSelector from "../components/AgeSelector";
 import Button from "../components/Button";
 import ScheduleSelector from "../components/ScheduleSelector";
+import SucursalSelection from "../components/SucursalSelection";
 export default function Robotica() {
   const edades = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
   const [menuHorario, setMenuHorario] = useState(false);
@@ -16,6 +17,8 @@ export default function Robotica() {
   const [shake, setShake] = useState(false);
   const [shakeEdad, setShakeEdad] = useState(false);
   const [shakeSchedule, setShakeSchedule] = useState(false);
+  const [shakeSucursal, setShakeSucursal] = useState(false);
+  const [sucursal, setSucursal] = useState("Coacalco");
   const handleCheck = () => {
     // Si el horario está vacío, se activa la animación de error
     if (horario === "") {
@@ -47,7 +50,7 @@ export default function Robotica() {
       console.log(codigo);
 
       window.open(
-        `https://wa.me/525561758678?text=Hola%2C%20quiero%20mi%20lugar%20en%20la%20clase%20gratis%20y%20aprovechar%20el%20descuento%20exclusivo.%20Mi%20c%C3%B3digo%20es%20${codigo}.🙌`,
+        `https://wa.me/525561758678?text=Hola%2C%20quiero%20mi%20lugar%20en%20la%20clase%20gratis%20sucursal%20${sucursal}%20y%20aprovechar%20el%20descuento%20exclusivo.%20Mi%20c%C3%B3digo%20es%20${codigo}.🙌`,
         "_blank"
       );
 
@@ -62,7 +65,7 @@ export default function Robotica() {
         <Banner icon="robotica.svg" />
         <div className="w-full p-3 bg-[#353535] rounded-lg">
           <PromoCard
-            title="Crear tu primer corte laser!!"
+            title="Crear tu primer circuito!!"
             description="Echa un vistazo a una clase gratis"
             imagen="/roboticaFire.png"
           />
@@ -103,7 +106,12 @@ export default function Robotica() {
           <span className="text-white">descuento permanente</span> en la
           mensualidad y armarás tu primer circuito.
         </p>
-
+        <SucursalSelection
+          setShakeSucursal={setShakeSucursal}
+          shakeSucursal={shakeSucursal}
+          setSucursal={setSucursal}
+          sucursal={sucursal}
+        />
         <Button
           onClick={handleCheck}
           label="Agenda clase muestra gratis"
