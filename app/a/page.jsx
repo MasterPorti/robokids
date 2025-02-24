@@ -1,12 +1,13 @@
-import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+"use client";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 function Page() {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   useEffect(() => {
-    navigate("/");
-  }, [navigate]);
+    router.push("/");
+  }, [router]);
 
   return null;
 }
