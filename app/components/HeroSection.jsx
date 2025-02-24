@@ -73,7 +73,7 @@ export default function HeroSection() {
         </svg>
         <span>en tu escuela </span>
       </button>
-      <div className="hidden  md:flex justify-center  mt-5 font-inter font-semibold text-gray-400 xs:text-lg lg:text-xl xl:max-w-xl">
+      <div className="hidden  md:flex mt-5 font-inter font-semibold text-gray-400 xs:text-lg lg:text-xl xl:max-w-xl">
         <p className="text-center">
           Si te emociona imaginar tus sueños, ¡imagina lograrlos!
         </p>
