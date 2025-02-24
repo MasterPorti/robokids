@@ -1,7 +1,14 @@
+"use client";
 import Image from "next/image";
 import VideoButton from "./VideoButton";
 
 export default function HeroSection() {
+  const handleWhatsappClick = () => {
+    window.open(
+      "https://wa.me/525561758678?text=Hola%2C%20qu%C3%ADsiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20cursos%20🤯",
+      "_blank"
+    );
+  };
   return (
     <div className="mx-5 lg:w-1/2">
       <div className="flex items-center text-3xl font-black text-white xs:text-4xl sm:text-5xl ">
@@ -16,7 +23,10 @@ export default function HeroSection() {
           <VideoButton />
         </div>
       </div>
-      <button className="bg-yellow1 flex gap-1 justify-center items-center cursor-default  font-black px-2 py-1 text-black rounded-md mt-3">
+      <button
+        onClick={handleWhatsappClick}
+        className="bg-yellow1 flex gap-1 justify-center items-center  font-black px-2 py-1 text-black rounded-md mt-3"
+      >
         <svg
           width="80"
           height="20"
