@@ -16,7 +16,7 @@ export default function HeroSection() {
           <VideoButton />
         </div>
       </div>
-      <button className="bg-yellow1 flex gap-1 justify-center items-center  font-black px-2 py-1 text-black rounded-md mt-3">
+      <button className="bg-yellow1 flex gap-1 justify-center items-center cursor-default  font-black px-2 py-1 text-black rounded-md mt-3">
         <svg
           width="80"
           height="20"
