@@ -50,7 +50,7 @@ export default function Robotica() {
       console.log(codigo);
 
       window.open(
-        `https://wa.me/525561758678?text=Hola%2C%20quiero%20mi%20lugar%20en%20la%20clase%20gratis%20sucursal%20${sucursal}%20y%20aprovechar%20el%20descuento%20exclusivo.%20Mi%20c%C3%B3digo%20es%20${codigo}.🙌`,
+        `https://wa.me/525540781607?text=Hola%2C%20quiero%20mi%20lugar%20en%20la%20clase%20gratis%20sucursal%20${sucursal}%20y%20aprovechar%20el%20descuento%20exclusivo.%20Mi%20c%C3%B3digo%20es%20${codigo}.🙌`,
         "_blank"
       );
 
