@@ -5,7 +5,7 @@ import VideoButton from "./VideoButton";
 export default function HeroSection() {
   const handleWhatsappClick = () => {
     window.open(
-      "https://wa.me/525561758678?text=Hola%2C%20qu%C3%ADsiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20cursos%20🤯",
+      "https://wa.me/525540781607?text=Hola%2C%20qu%C3%ADsiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20cursos%20🤯",
       "_blank"
     );
   };
